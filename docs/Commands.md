@@ -42,6 +42,10 @@ qdel jobID
 ## AIRE
 
 ```bash
+ssh sc20osc@login1.aire.leeds.ac.uk -J sc20osc@rash.leeds.ac.uk
+```
+
+```bash
 #!/bin/bash
 
 #SBATCH --job-name=primes
@@ -59,4 +63,6 @@ python primes.py
 
 ```bash
 scp -o "IdentitiesOnly=yes" -i ~/.ssh/hartree -r oxc35-mtc11@jade2.hartree.stfc.ac.uk:/jmain02/home/J2AD014/mtc11/oxc35-mtc11/monai_jade monai_jade
+
+scp -r -J sc20osc@rash.leeds.ac.uk DATA_PATH sc20osc@login1.aire.leeds.ac.uk:/users/sc20osc/data
 ```
